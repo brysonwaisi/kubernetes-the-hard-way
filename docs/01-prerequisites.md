@@ -15,6 +15,22 @@ This tutorial requires four (4) virtual or physical ARM64 or AMD64 machines runn
 
 How you provision the machines is up to you, the only requirement is that each machine meet the above system requirements including the machine specs and OS version. Once you have all four machines provisioned, verify the OS requirements by viewing the `/etc/os-release` file:
 
+You can run the `launch.sh`
+```bash
+./launch.sh
+```
+
+Once all the 4 instances are lauched you can open a shell:
+```bash
+multipass shell jumpbox
+```
+
+How you provision the machines is up to you, the only requirement is that each machine meet the above system requirements including the machine specs and OS version. Once you have all four machine provisioned, verify the system requirements by running the `uname` command on each machine:
+
+```bash 
+uname -mov
+```
+
 ```bash
 cat /etc/os-release
 ```

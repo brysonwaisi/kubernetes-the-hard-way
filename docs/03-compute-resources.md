@@ -95,6 +95,12 @@ node-0
 node-1
 ```
 
+If password authentication fails, you can chek snippets in /etc/ssh/sshd_config.d/ find what's under there and update making sure it has 
+
+```text
+PermitRootLogin yes
+PasswordAuthentication yes
+```
 ## Hostnames
 
 In this section you will assign hostnames to the `server`, `node-0`, and `node-1` machines. The hostname will be used when executing commands from the `jumpbox` to each machine. The hostname also plays a major role within the cluster. Instead of Kubernetes clients using an IP address to issue commands to the Kubernetes API server, those clients will use the `server` hostname instead. Hostnames are also used by each worker machine, `node-0` and `node-1` when registering with a given Kubernetes cluster.
@@ -126,7 +132,7 @@ node-0.kubernetes.local
 node-1.kubernetes.local
 ```
 
-## Host Lookup Table
+## Host Lookup Table (DNS Section)
 
 In this section you will generate a `hosts` file which will be appended to `/etc/hosts` file on the `jumpbox` and to the `/etc/hosts` files on all three cluster members used for this tutorial. This will allow each machine to be reachable using a hostname such as `server`, `node-0`, or `node-1`.
 
@@ -205,7 +211,7 @@ node-0
 node-1
 ```
 
-## Adding `/etc/hosts` Entries To The Remote Machines
+## Adding `/etc/hosts` (DNS) Entries To The Remote Machines
 
 In this section you will append the host entries from `hosts` to `/etc/hosts` on each machine listed in the `machines.txt` text file.
 

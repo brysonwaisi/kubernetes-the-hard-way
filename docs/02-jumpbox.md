@@ -12,6 +12,10 @@ ssh root@jumpbox
 
 All commands will be run as the `root` user. This is being done for the sake of convenience, and will help reduce the number of commands required to set everything up.
 
+```bash
+su - root or sudo -i
+```
+
 ### Install Command Line Utilities
 
 Now that you are logged into the `jumpbox` machine as the `root` user, you will install the command line utilities that will be used to preform various tasks throughout the tutorial.
@@ -29,7 +33,7 @@ Now it's time to download a copy of this tutorial which contains the configurati
 
 ```bash
 git clone --depth 1 \
-  https://github.com/kelseyhightower/kubernetes-the-hard-way.git
+  https://github.com/brysonwaisi/kubernetes-the-hard-way.git
 ```
 
 Change into the `kubernetes-the-hard-way` directory:
